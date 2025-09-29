@@ -9,13 +9,29 @@
     
     <!-- Link to the separate CSS file -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- FIX: Adding style block to set the body display, allowing us to remove the wrapper div 
+           and make #container the first <div>, thus fixing the test selector issue. -->
+    <style>
+        body {
+            /* Equivalent to the removed Tailwind classes: flex justify-center items-center min-h-screen bg-gray-100 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f4f6; /* Tailwind gray-100 default */
+        }
+    </style>
 </head>
 <body>
-    <div class="flex justify-center items-center min-h-screen bg-gray-100">
-        <!-- The main container element -->
-        <div id="container">
-            This is the main container element
-        </div>
+    <!-- 
+        FIX: The outer wrapper div (which was the cause of the test failure) has been removed. 
+        The #container div is now the only div in the body, ensuring the test's selector 
+        (cy.get('div').then(element => element[0])) correctly targets the element 
+        with the red pseudo-element style.
+    -->
+    <div id="container">
+        This is the main container element
     </div>
 </body>
 </html>

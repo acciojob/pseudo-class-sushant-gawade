@@ -12,7 +12,6 @@ body {
     
     /* Add some padding and border for visual clarity of the main content */
     padding: 10px 15px;
-    border: 2px dashed #374151;
     background-color: #ffffff;
     border-radius: 8px;
     display: inline-block; /* Allows content and pseudo-elements to wrap nicely */
