@@ -1,19 +1,47 @@
-/*  your css code here. If applicable */
+/* Custom styles using CSS Pseudo-Elements */
+
+body {
+    /* Keeping body styles clean, only applying font */
+    font-family: 'Inter', sans-serif;
+}
+
+/* 1. Target the main container element */
 #container {
-  margin: 20px;
-  font-size: 18px;
+    /* Apply the required margin */
+    margin: 20px;
+    
+    /* Add some padding and border for visual clarity of the main content */
+    padding: 10px 15px;
+    border: 2px dashed #374151;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: inline-block; /* Allows content and pseudo-elements to wrap nicely */
+    font-size: 16px;
+    color: #374151;
+    font-weight: 500;
 }
 
-/* Insert content before */
+/* 2. CSS pseudo-element to insert content BEFORE the main content */
 #container::before {
-  content: "Before Element ";
-  color: #f00;
-  font-size: 20px;
+    /* Required content */
+    content: "Before Element "; 
+    
+    /* Required styling */
+    color: #f00; /* Red color */
+    font-size: 20px;
+    font-weight: bold;
 }
 
-/* Insert content after */
+/* 3. CSS pseudo-element to insert content AFTER the main content */
 #container::after {
-  content: " After Element";
-  color: #f00;
-  font-size: 20px;
+    /* Required content (note the leading space for separation) */
+    content: " After Element";
+    
+    /* Required styling */
+    color: #f00; /* Red color */
+    font-size: 20px;
+    font-weight: bold;
 }
+
+/* The layout logic from the body was moved to a wrapper div in index.html */
+/* The styles here focus only on the container and its content. */
